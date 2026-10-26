@@ -1,0 +1,274 @@
+/* RESET & GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5c1817;
+    background-image: radial-gradient(#7a2120 15%, transparent 16%);
+    background-size: 30px 30px;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 30px 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.portfolio-container {
+    max-width: 850px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* HEADER SECTION */
+.header {
+    grid-column: 1 / -1;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .header {
+        grid-column: 1 / 2;
+    }
+}
+
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5rem;
+    color: #ffffff;
+    line-height: 0.8;
+    font-weight: 400;
+}
+
+.serif-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.badge-pill {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #5c1817;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* PHOTO & STAMP FRAME */
+.photo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .photo-section {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+    }
+}
+
+.stamp-frame {
+    position: relative;
+    background: #ffffff;
+    padding: 15px;
+    transform: rotate(3deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Stamp edge effect using mask */
+    --r: 8px;
+    --g: 4px;
+    mask: radial-gradient(var(--r) at var(--r), #0000 98%, #000) calc(-1 * var(--r)) calc(-1 * var(--r)) / calc(2 * var(--r) + var(--g)) calc(2 * var(--r) + var(--g));
+    -webkit-mask: radial-gradient(var(--r) at var(--r), #0000 98%, #000) calc(-1 * var(--r)) calc(-1 * var(--r)) / calc(2 * var(--r) + var(--g)) calc(2 * var(--r) + var(--g));
+}
+
+.stamp-frame:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.stamp-frame img {
+    width: 260px;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* RED PIN 3D EFFECT */
+.red-pin {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle at 30% 30%, #ff6b6b, #cc0000);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* CARD / CONTAINER GLASSMORPHISM */
+.card {
+    background-color: rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 22px;
+    backdrop-filter: blur(5px);
+}
+
+.section-title {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #5c1817;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.about-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #f1dada;
+}
+
+/* CONTACT LIST */
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #f1dada;
+}
+
+.contact-list i {
+    width: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.contact-list a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.contact-list a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+/* ITEM BLOCK (EXPERIENCE / EDUCATION) */
+.item-block {
+    margin-bottom: 15px;
+}
+
+.item-block:last-child {
+    margin-bottom: 0;
+}
+
+.item-block h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.item-block .subtitle {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #e2a8a8;
+    margin-bottom: 4px;
+}
+
+.item-block p {
+    font-size: 0.85rem;
+    color: #f1dada;
+    line-height: 1.4;
+}
+
+/* SKILLS LIST */
+.skills-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.skills-list li {
+    font-size: 0.9rem;
+    color: #f1dada;
+    margin-bottom: 6px;
+}
+
+/* SOFTWARES BADGES */
+.software-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.software-badge {
+    background-color: #ffffff;
+    color: #5c1817;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 767px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MODAL STYLES */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
